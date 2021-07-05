@@ -4,9 +4,12 @@
 	"private": true,
 	"scripts": {
 		"start": "node server/app.js",
-		"build": "cd bookshelf-client && npm install && npm run build",
+		"heroku-postbuild": "cd bookshelf-client && npm install && npm run build",
 		"dev": "nodemon",
 		"test": "(dropdb --if-exists test-tims-bookshelf && createdb test-tims-bookshelf) && NODE_ENV=test mocha"
+	},
+	"engines": {
+		"node": "16.2.0"
 	},
 	"dependencies": {
 		"cookie-parser": "~1.4.4",
